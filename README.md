@@ -15,3 +15,20 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 ```
+
+## Schritt 2: Messwerte speichern
+Nun sollten wir die Werte speichern. Hierfür legen wir eine ``||Variables: Variable||`` vor der Schleife an z.B. ``||Variables: Messwerte||``. 
+In diese Variable kommt ein ``||Array: leeres Array||``, diese findest du unter ``||advanced: Fortgeschritten||`` und dann unter ``||Array: Arrays||``.
+In der Schleife ersetzen wir ``||basic: zeige Zahl|`` durch ``||Array: list füge Wert am Ende hinzu||``. 
+In den freien Teil kommt unser ``||Input: Temperatur (°C)||`` und die ``||Variables: Variable||`` ``||Variables: list||`` erstzen wir durch ``||Variables: Messwerte||``.
+
+```blocks
+let Messwerte: number[] = []
+input.onButtonPressed(Button.AB, function () {
+    Messwerte = []
+    for (let index = 0; index < 10; index++) {
+        Messwerte.push(input.temperature())
+        basic.pause(100)
+    }
+})
+```
